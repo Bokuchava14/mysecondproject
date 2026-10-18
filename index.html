@@ -1,11 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fake Store</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand-wrap">
+        <div class="brand-mark">F</div>
+        <div>
+          <p class="eyebrow">Trending Now</p>
+          <h1>Fake Store</h1>
+        </div>
+      </div>
+
+      <div class="topbar-actions">
+        <button class="shop-btn" type="button">Shop Collection</button>
+        <button class="cart-trigger" type="button" aria-label="Open cart">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-label">Cart</span>
+          <span id="cart-count" class="cart-count">0</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="tag">New arrivals</p>
+          <h2>Curated essentials for everyday living.</h2>
+          <p>
+            Discover hand-picked products designed to blend comfort, style, and
+            performance.
+          </p>
+        </div>
+        <div class="hero-badge">
+          <span>Up to 30% off</span>
+        </div>
+      </section>
+
+      <section class="catalog">
+        <div class="section-head">
+          <h3>Featured Products</h3>
+          <span id="product-count">Loading...</span>
+        </div>
+        <div id="product-grid" class="product-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <aside id="cart-panel" class="cart-panel" aria-label="Shopping cart">
+      <div class="cart-header">
+        <div>
+          <p class="cart-kicker">Your bag</p>
+          <h3>Cart</h3>
+        </div>
+        <button id="close-cart" class="close-cart" type="button" aria-label="Close cart">×</button>
+      </div>
+
+      <div id="cart-items" class="cart-items"></div>
+
+      <div class="cart-summary">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <strong id="subtotal">$0.00</strong>
+        </div>
+        <div class="summary-row total-row">
+          <span>Total</span>
+          <strong id="total-price">$0.00</strong>
+        </div>
+        <button id="checkout-btn" class="checkout-btn" type="button">Proceed to Checkout</button>
+      </div>
+    </aside>
+
+    <div id="checkout-modal" class="checkout-modal hidden" aria-hidden="true">
+      <div class="checkout-card">
+        <div class="checkout-header">
+          <h3>Checkout</h3>
+          <button id="close-checkout" class="close-cart" type="button" aria-label="Close checkout">×</button>
+        </div>
+
+        <form id="checkout-form">
+          <div class="field-group">
+            <label for="full-name">Full name</label>
+            <input id="full-name" name="fullName" type="text" placeholder="Your full name" required />
+          </div>
+
+          <div class="field-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          </div>
+
+          <div class="field-group">
+            <label for="address">Shipping address</label>
+            <textarea id="address" name="address" rows="3" placeholder="Street, city, ZIP" required></textarea>
+          </div>
+
+          <div class="field-group">
+            <label for="payment">Payment method</label>
+            <select id="payment" name="payment" required>
+              <option value="">Select payment</option>
+              <option value="Card">Credit/Debit Card</option>
+              <option value="PayPal">PayPal</option>
+              <option value="Cash on Delivery">Cash on Delivery</option>
+            </select>
+          </div>
+
+          <div class="checkout-total">
+            <span>Total due</span>
+            <strong id="checkout-total">$0.00</strong>
+          </div>
+
+          <button class="buy-btn" type="submit">Buy Now</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="product-detail-modal" class="checkout-modal hidden" aria-hidden="true">
+      <div class="product-detail-card">
+        <div class="checkout-header">
+          <h3>Product Details</h3>
+          <button id="close-product-details" class="close-cart" type="button" aria-label="Close product details">×</button>
+        </div>
+        <div id="product-detail-content" class="product-detail-content"></div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
 </html>
